@@ -1,5 +1,5 @@
 import {CreateToDoForm } from './CreateToDoForm'
-import image from '../sources/image.png'
+import imgCreateToDoItem from '../sources/image.png'
 
 const ToDoLeftSide = ({onCreate, createValue, setCreateValue}) => {
     return (
@@ -19,7 +19,7 @@ const ToDoLeftSide = ({onCreate, createValue, setCreateValue}) => {
                   is-one-quarter-tablet
                   is-one-quarter-mobile
                 '>
-                  <img src={image} alt="Image related to do list" />
+                  <img src={imgCreateToDoItem} alt="Related to do list" />
                 </div>
 
                 <div className='column'>
