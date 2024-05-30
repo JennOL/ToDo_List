@@ -1,5 +1,4 @@
 const CreateToDoForm = ({createValue, setCreateValue, onCreate}) => {
-    console.log(createValue);
     return (
         <section className="fixed-grid has-1-cols">
             <div className='grid '>

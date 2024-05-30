@@ -1,5 +1,4 @@
 const ToDoSearch = ({searchValue, setSearchValue}) => {
-    console.log(searchValue);
     return (
         <div className="pt-5 pr-5">
             <input 
