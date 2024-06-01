@@ -1,7 +1,7 @@
 import {CreateToDoForm } from './CreateToDoForm'
 import imgCreateToDoItem from '../sources/image.png'
 
-const ToDoLeftSide = ({onCreate, createValue, setCreateValue}) => {
+const ToDoLeftSide = ({createValue, setCreateValue, setToDoList}) => {
     return (
         <div className='column is-half'>
           <div className='card'>
@@ -26,7 +26,7 @@ const ToDoLeftSide = ({onCreate, createValue, setCreateValue}) => {
                   <CreateToDoForm 
                     createValue={createValue}
                     setCreateValue={setCreateValue}
-                    onCreate={onCreate}
+                    setToDoList={setToDoList}
                   />
                 </div>
                 

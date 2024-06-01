@@ -1,4 +1,6 @@
-const CreateToDoForm = ({createValue, setCreateValue, onCreate}) => {
+import { onCreateToDo } from '../utils/todo';
+
+const CreateToDoForm = ({createValue, setCreateValue, setToDoList}) => {
     return (
         <section className="fixed-grid has-1-cols">
             <div className='grid '>
@@ -17,7 +19,7 @@ const CreateToDoForm = ({createValue, setCreateValue, onCreate}) => {
                     />
                 </div>
                 <div className="cell has-text-right">
-                    <button className="button btn-move btn-move--stripe" onClick={ () => onCreate(createValue)} >Submit</button>
+                    <button className="button btn-move btn-move--stripe" onClick={ () => onCreateToDo(createValue, setCreateValue, setToDoList)} >Submit</button>
                 </div>
             </div>
         </section>

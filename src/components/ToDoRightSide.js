@@ -2,7 +2,7 @@ import { ToDoCounter } from './ToDoCounter';
 import { ToDoSearch } from './ToDoSearch';
 import { ToDoItem } from './ToDoItem';
 
-const ToDoRightSide = ({defaultTodos, searchValue, setSearchValue, completedTask, totalTask, onComplete, onDelete}) => {
+const ToDoRightSide = ({defaultTodos, searchValue, setSearchValue, completedTask, totalTask, setToDoList}) => {
     const allList = defaultTodos.sort((a, b) => a.completed - b.completed);
     return (
         <div className='column is-half'>
@@ -16,11 +16,11 @@ const ToDoRightSide = ({defaultTodos, searchValue, setSearchValue, completedTask
                 {
                   allList.map(todo => (
                     <ToDoItem 
-                    text={todo.text} 
-                    completed={todo.completed} 
-                    key={todo.text}
-                    onComplete={() => onComplete(todo.text)}
-                    onDelete={() => onDelete(todo.text)}
+                    key={todo.id}
+                    id={todo.id}
+                    text={todo.text}
+                    completed={todo.completed}
+                    setToDoList={setToDoList}
                     />
                   ))
                 }            

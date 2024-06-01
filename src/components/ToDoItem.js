@@ -1,6 +1,7 @@
 import { BiCircle, BiCheckDouble } from "react-icons/bi";
+import { onCompletedToDo, onDeleteToDo } from '../utils/todo';
 
-const ToDoItem = ({text, completed, onComplete, onDelete}) => {
+const ToDoItem = ({text, completed, id, setToDoList}) => {
     const colorBox = completed ? 'has-background-primary-100' : 'purple-box';
     return (
         <div className={`box columns is-mobile p-0 mb-4 mt-2 ${colorBox}`}>
@@ -10,7 +11,11 @@ const ToDoItem = ({text, completed, onComplete, onDelete}) => {
                     is-one-quarter-tablet
                     is-one-quarter-mobile
                 ">
-                {completed ? <BiCheckDouble style={{color:'green', fontSize:'30px'}}  /> : <BiCircle  onClick={onComplete}/> }
+                {completed ? 
+                        <BiCheckDouble style={{color:'green', fontSize:'30px', cursor:'pointer'}} onClick={()=>onCompletedToDo({id, text, completed, setToDoList})} /> 
+                    : 
+                        <BiCircle style={{cursor:'pointer'}} onClick={()=>onCompletedToDo({id, text, completed, setToDoList})}/>
+                }
             </div>
             <div className="
                 column 
@@ -27,7 +32,7 @@ const ToDoItem = ({text, completed, onComplete, onDelete}) => {
                     is-one-quarter-mobile
                     has-text-left
                 ">
-                    <button className="delete is-success" onClick={onDelete}></button>
+                    <button className="delete is-success" onClick={()=>onDeleteToDo({id, setToDoList})}></button>
                 </div>
             }            
         </div>
